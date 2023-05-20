@@ -1,18 +1,39 @@
 import 'package:flutter/material.dart';
 
 void main() {
-  runApp(const MainApp());
+  runApp(Project_Flutteration());
 }
 
-class MainApp extends StatelessWidget {
-  const MainApp({super.key});
+class Project_Flutteration extends StatelessWidget {
+  const Project_Flutteration({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return const MaterialApp(
+    return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
+        appBar: AppBar(
+          title: Text("AppBar"),
+          centerTitle: true,
+          backgroundColor: Colors.deepOrange,
+          foregroundColor: Colors.cyan[50],
+        ),
         body: Center(
-          child: Text('Hello World!'),
+          child: Text(
+            "This is the Centered Text!",
+            style: TextStyle(
+                color: Colors.pinkAccent, fontStyle: FontStyle.italic),
+          ),
+        ),
+        floatingActionButton: FloatingActionButton(
+          child: Text(
+            "Click",
+            style: TextStyle(fontStyle: FontStyle.italic),
+          ),
+          onPressed: () {
+            Text("Click!");
+          },
+          backgroundColor: Colors.green,
         ),
       ),
     );
